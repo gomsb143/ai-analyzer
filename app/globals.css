@@ -1,0 +1,65 @@
+/* ── Google Font ────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Root Design Tokens ─────────────────────────────────── */
+:root {
+  --sg-50:  #effaf5;
+  --sg-100: #d7f3e4;
+  --sg-200: #b2e6cc;
+  --sg-300: #7fd0aa;
+  --sg-400: #48b385;
+  --sg-500: #2e8b57;   /* sea green core */
+  --sg-600: #247047;
+  --sg-700: #1e5c3b;
+  --sg-800: #1a4a30;
+  --sg-900: #163d27;
+  --sg-950: #0b2217;
+}
+
+/* ── Base ───────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #f7faf8;   /* very soft sea-green tinted white */
+  color: #1a2e22;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Selection ──────────────────────────────────────────── */
+::selection {
+  background: var(--sg-200);
+  color: var(--sg-800);
+}
+
+/* ── Scrollbar ──────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--sg-300); border-radius: 99px; }
+
+/* ── Utility: sea-green gradient text ───────────────────── */
+.sg-gradient-text {
+  background: linear-gradient(135deg, var(--sg-500) 0%, var(--sg-300) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+/* ── Spinner ────────────────────────────────────────────── */
+@keyframes spin-cw  { to { transform: rotate(360deg); } }
+@keyframes spin-ccw { to { transform: rotate(-360deg); } }
+@keyframes breathe  { 0%,100%{opacity:.6;transform:scale(.97)} 50%{opacity:1;transform:scale(1.03)} }
+@keyframes slide-up { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+.animate-spin-cw  { animation: spin-cw  1.1s linear infinite; }
+.animate-spin-ccw { animation: spin-ccw 1.8s linear infinite; }
+.animate-breathe  { animation: breathe  2.6s ease-in-out infinite; }
+.animate-slide-up { animation: slide-up .45s cubic-bezier(.22,1,.36,1) both; }
