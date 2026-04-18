@@ -79,7 +79,7 @@ The analyzer uses a structured keyword-based engine to classify text:
 ## 👤 Author
 
 **Gomathi Balan SN**
-*Enterprise AI Strategy & Full-Stack Developer*
+*Enterprise AI Strategy & Senior AI Program Manager*
 
 ---
 © 2026 Gomathi Balan SN · Built for strategic business intelligence.
